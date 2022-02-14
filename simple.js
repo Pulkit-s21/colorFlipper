@@ -2,11 +2,13 @@ const colors = ["green", "red", "rgba(135,220,143,0.7)", "pink", "orange","yello
 
 const color = document.querySelector(".color");
 const btn = document.getElementById("btn");
+const bodyBcg = document.querySelector('body');
 
 btn.addEventListener("click", function () {
     const randomNumber = getRandomNumber();
-    document.body.style.backgroundColor = colors[randomNumber];
+    bodyBcg.style.backgroundColor = colors[randomNumber];
     color.textContent = colors[randomNumber];
+    bodyBcg.style.transition = `all 0.45s ease-in-out`;
 });
 
 function getRandomNumber() {
